@@ -70,7 +70,7 @@ const Login = () => {
     >
       {/* Animated Text */}
       <p className="text-xl font-semibold text-center">
-        {"Hi Amina, please login or signup".split("").map((char, index) => (
+        {"Hi Sameen, please login or signup".split("").map((char, index) => (
           <span
             key={index}
             ref={(el) => (textRef.current[index] = el)}
