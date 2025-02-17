@@ -11,9 +11,7 @@ connectDB();
 app.use(express.json());
 app.use(
   cors({
-    origin: (origin, callback) => {
-      callback(null, true); // Allow all origins dynamically
-    },
+    origin: "*",
 //    origin: ["http://localhost:5173", "http://localhost:5175", "http://192.168.131.83:8080" ],
     credentials: true,
   })
