@@ -164,13 +164,17 @@ const Birthday = () => {
         ))}
       </div>
 
-      {/* Control Panel */}
-      <div className="absolute left-10 top-1/2 transform -translate-y-1/2 flex flex-col space-y-10 z-10">
+      {/* Control Panel - Adjusted for poem spacing */}
+      <div
+        className="absolute left-10 top-1/2 transform -translate-y-1/2 flex flex-col space-y-10 z-20
+        max-md:top-6 max-md:left-1/2 max-md:-translate-x-1/2 max-md:-translate-y-0 
+        max-md:space-y-3 max-md:w-full max-md:items-center"
+      >
         <button
           onClick={handleShowBirthdayMessage}
           className="px-6 py-3 bg-gradient-to-r from-gray-800 to-black text-white rounded-xl 
-            shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105
-            border border-white/20"
+          shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105
+          border border-white/20 max-md:w-full max-md:max-w-[200px]"
         >
           Birthday Message
         </button>
@@ -178,8 +182,8 @@ const Birthday = () => {
         <button
           onClick={handleShowMessage}
           className="px-6 py-3 bg-gradient-to-r from-gray-800 to-black text-white rounded-xl 
-            shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105
-            border border-white/20"
+          shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105
+          border border-white/20 max-md:w-full max-md:max-w-[200px]"
         >
           Secret Message
         </button>
@@ -187,31 +191,39 @@ const Birthday = () => {
         <button
           onClick={handleLogout}
           className="px-6 py-3 bg-gradient-to-r from-gray-800 to-black text-white rounded-xl 
-            shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105
-            border border-white/20"
+          shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105
+          border border-white/20 max-md:w-full max-md:max-w-[200px]"
         >
           Exit
         </button>
       </div>
 
-      {/* Content Area */}
-      <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full max-w-2xl px-4 z-10">
+      {/* Content Area - Adjusted spacing */}
+      <div
+        className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full max-w-2xl px-4 z-10
+        max-md:top-[60%] max-md:-translate-y-1/2 max-md:px-2"
+      >
         {showMessage && (
           <div
             ref={messageRef}
             className="text-lg p-8 bg-gradient-to-br from-gray-900/60 to-gray-800/50 
-              text-white rounded-2xl shadow-2xl backdrop-blur-lg border-2 border-white/30 mx-auto"
+            text-white rounded-2xl shadow-2xl backdrop-blur-lg border-2 border-white/30 mx-auto
+            max-md:p-4 max-md:text-base mb-8 max-md:mb-4"
           >
             {poemLines.map((line, index) => (
               <p
                 key={index}
                 ref={(el) => (lineRefs.current[index] = el)}
-                className="opacity-0 leading-relaxed mb-4 last:mb-0 text-purple-100 font-medium"
+                className="opacity-0 leading-relaxed mb-4 last:mb-0 text-purple-100 font-medium
+                max-md:leading-snug max-md:mb-2"
               >
                 {line}
                 {index === poemLines.length - 1 && (
-                  <span className="text-cyan-300 font-semibold mt-4 block">
-                    ✨ Self-love is eternal ✨
+                  <span
+                    className="text-cyan-300 font-semibold mt-4 block
+                  max-md:text-sm max-md:mt-2"
+                  >
+                    ✨ Your Abdullah Jajjah ✨
                   </span>
                 )}
               </p>
@@ -220,16 +232,19 @@ const Birthday = () => {
         )}
 
         {showBirthdayMessage && (
-          <div ref={birthdayMessageRef} className="space-y-8 mx-auto">
+          <div
+            ref={birthdayMessageRef}
+            className="space-y-8 mx-auto max-md:space-y-4"
+          >
             <h1
               className="text-[42px] font-bold bg-gradient-to-r from-cyan-400 to-blue-500 
-              bg-clip-text text-transparent"
+            bg-clip-text text-transparent max-md:text-[32px]"
             >
               <span className="birthday-heading opacity-0">
                 🎉 Happy Birthday Sameen! 🎂
               </span>
             </h1>
-            <div className="text-xl text-purple-100 font-medium">
+            <div className="text-xl text-purple-100 font-medium max-md:text-lg">
               <span className="birthday-subtext opacity-0">
                 Wishing you an amazing day filled with joy! 🌟
               </span>
@@ -241,7 +256,8 @@ const Birthday = () => {
       {/* Cake Emoji */}
       <div
         ref={cakeRef}
-        className="absolute bottom-10 right-10 text-6xl opacity-0 z-10"
+        className="absolute bottom-10 right-10 text-6xl opacity-0 z-10
+        max-md:bottom-4 max-md:right-4 max-md:text-4xl"
       >
         🎂
       </div>
