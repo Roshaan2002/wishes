@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   backend:
     build: ./backend
@@ -8,7 +10,7 @@ services:
     restart: always
     container_name: backend-app
     networks:
-      - app-network  # Add this line
+      - app-network
 
   frontend:
     build: ./frontend
@@ -17,12 +19,12 @@ services:
     depends_on:
       - backend
     environment:
-      - VITE_BACKEND_URL=http://backend:5000  # Ensure this matches .env
+      - VITE_BACKEND_URL=http://3.94.80.174:5000
     restart: always
     container_name: frontend-app
     networks:
-      - app-network  # Add this line
+      - app-network
 
 networks:
-  app-network:  # Define a custom network
+  app-network:
     driver: bridge
